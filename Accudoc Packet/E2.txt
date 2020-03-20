@@ -1,0 +1,14 @@
+#READ FILE AND TRIM NEWLINE
+open($FILE2, 'file2.txt' );
+@lineArray = <$FILE2>;
+chomp(@lineArray);
+
+#FOR EACH LINE: SPLIT INTO WORDS, REVERSE WORDS, PRINT WORDS
+foreach $currentLine (@lineArray){
+    @splitStrings = split(/ /, $currentLine);
+    @splitStrings = reverse @splitStrings;
+    foreach $currentString (@splitStrings){
+         print $currentString, "\t";
+    }
+    print "\n"
+}

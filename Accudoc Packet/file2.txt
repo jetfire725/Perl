@@ -1,0 +1,6 @@
+first line of file
+second line of file
+third line of file
+fourth line of file
+fifth line of file
+sixth line of file

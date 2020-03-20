@@ -1,0 +1,16 @@
+#READ FILE AND TRIM NEWLINE
+open($FILE1, 'file1.txt' );
+@lineArray = <$FILE1>;
+chomp(@lineArray);
+
+#FILE HANDLE TO ARRAY, THEN SPLIT BY TARGET
+$text = "@lineArray";
+@splitLines = split(/the/, $text);
+
+#FOR EACH LINE, PAD BEGINNING OF FIRST STRING, PAD END OF SECOND STRING
+for($index = 0; $index < (scalar @splitLines)-1; $index++) { 
+    $firstString = " "x30 . $splitLines[$index];
+    $secondString = $splitLines[$index+1] . " "x30;
+    #PRINT ONLY +- 15 CHARS FROM TARGET STRING
+    print substr($firstString, -15, 15), 'the', substr($secondString, 0, 15), "\n";
+}
